@@ -1,0 +1,90 @@
+## Interface: 120007
+## Title: GoblinPlates
+## Notes: Old-school triage nameplates
+## Author: Alex
+## Version: 0.1.8
+
+## X-Category: UnitFrame
+## X-License: All Rights Reserved
+## SavedVariables: GoblinPlatesDB, MobInfoConfig, MobInfoDB, MI2_ItemNameTable, MI2_CharTable, MI2_ZoneTable, MI2_UnitId2Name, MI2_CurrencyNameTable, MI2_DB, MI2_RecentLoots
+## SavedVariablesPerCharacter: MI2_SummaryDB
+
+# Embedded Libraries
+Libs\LibStub-1.0\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\LibRangeCheck-3.0\LibRangeCheck-3.0.lua
+Libs\LibCustomGlow-1.0\LibCustomGlow-1.0.lua
+
+GoblinPlatesCore.lua
+GoblinPlatesConfig.lua
+GoblinPlatesColors.lua
+GoblinPlatesMedia.lua
+
+GoblinPlatesNameplate.lua
+GoblinPlatesHealthBar.lua
+GoblinPlatesPowerBar.lua
+GoblinPlatesCastBar.lua
+GoblinPlatesRange.lua
+GoblinPlatesLoS.lua
+GoblinPlatesText.lua
+
+# Embedded Goblin Quartz
+GoblinQuartz\GoblinQuartz.lua
+GoblinQuartz\GoblinQuartzOptions.lua
+
+# Embedded Goblin Frames
+GoblinFrames\GoblinFrames.lua
+GoblinFrames\GoblinFramesAura.lua
+GoblinFrames\GoblinFramesParty.lua
+GoblinFrames\GoblinFramesRaid.lua
+GoblinFrames\GoblinFramesRange.lua
+
+# Embedded Goblin Bags
+GoblinBags\GoblinBagsNative.lua
+
+
+GoblinPlatesTarget.lua
+GoblinPlatesThreat.lua
+GoblinPlatesAuras.lua
+GoblinPlatesQuest.lua
+GoblinPlatesClassification.lua
+GoblinPlatesClassPower.lua
+
+GoblinPlatesElite.lua
+GoblinPlatesBoss.lua
+GoblinPlatesIcons.lua
+
+GoblinPlatesAnimations.lua
+GoblinPlatesOptions.lua
+GoblinPlatesDiagnostics.lua
+GoblinPlatesResearchBridge.lua
+
+# Embedded GoblinResearcher (renamed MobInfo2)
+GoblinResearcher\libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+GoblinResearcher\libs\LibPeriodicTable-3.1\LibPeriodicTable-3.1\LibPeriodicTable-3.1.lua
+GoblinResearcher\libs\LibPeriodicTable-3.1\LibPeriodicTable-3.1-Tradeskill\LibPeriodicTable-3.1-Tradeskill.lua
+GoblinResearcher\libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+GoblinResearcher\libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+GoblinResearcher\libs\LibUIDropDownMenu\LibUIDropDownMenu.lua
+GoblinResearcher\libs\HereBeDragons\HereBeDragons-2.0.lua
+GoblinResearcher\libs\LibStub\LibStub.lua
+GoblinResearcher\libs\LibSerialize\LibSerialize.lua
+GoblinResearcher\libs\LibDeflate\LibDeflate.lua
+GoblinResearcher\GoblinResearcherBootstrap.lua
+GoblinResearcher\Localization\Manifest.xml
+GoblinResearcher\GoblinResearcher_Import.lua
+GoblinResearcher\Database\Manifest.xml
+GoblinResearcher\GoblinResearcher_EventBusMixin.lua
+GoblinResearcher\GoblinResearcher_ProtectedNames.lua
+GoblinResearcher\GoblinResearcher.lua
+GoblinResearcher\GoblinResearcher_Events.lua
+GoblinResearcher\GoblinResearcher_ItemData.lua
+GoblinResearcher\GoblinResearcher_Health.lua
+GoblinResearcher\GoblinResearcher_Slash.lua
+GoblinResearcher\GoblinResearcher_Search.lua
+GoblinResearcher\GoblinResearcher_Config.lua
+GoblinResearcher\GoblinResearcher_Tooltip.lua
+GoblinResearcher\Summary\Manifest.xml
+GoblinResearcher\Frames\GoblinResearcher.xml
+GoblinResearcher\Frames\GoblinResearcher_Config.xml
+GoblinResearcher\Frames\GoblinResearcher_Tooltip.xml

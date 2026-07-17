@@ -1,0 +1,160 @@
+GoblinPlates Changelog
+======================
+
+GoblinPlates v0.1.97 Stable
+Release Date: July 16, 2026
+
+Absorb Shields and Combat State
+- Added faction-specific combat indicators: crossed swords for Alliance and crossed axes for Horde.
+- Added full-frame light-blue absorb overlays for player, target, party, raid, and nameplate units.
+- Absorb overlays begin across the complete frame and deplete with the active shield instead of following the health-bar fill.
+- Added centered remaining-absorb values while keeping health values readable.
+- Corrected shield scaling differences among players of different levels.
+- Ensured combat indicators render above shield overlays.
+
+Performance
+- Set health refresh to 0.15 seconds in combat and 3.5 seconds out of combat.
+- Set nameplate threat refresh to 0.30 seconds.
+- Set Range/LoS refresh to 1.5 seconds in combat and 0.15 seconds out of combat.
+- Set aura refresh to 0.25 seconds.
+- Changed GoblinResearcher tooltip data to refresh once per tooltip draw.
+- Reduced redundant shield, aura, health, and layout work.
+
+GoblinResearcher
+- Preserved legacy MI2 database identifiers internally while completing the visible GoblinResearcher rebrand.
+- Rebranded the English settings window, minimap tooltip, database labels, option descriptions, and welcome text.
+- Replaced the legacy monster portrait and minimap artwork with a custom GoblinResearcher icon based on the Codex goblin pet.
+- Connected research displays more directly to GoblinPlates unit information where available.
+
+GoblinBags (Preview)
+- Added a native Combined Backpack categorizer that retains Blizzard's real item buttons and native use, equip, drag, split-stack, and cooldown behavior.
+- Added dynamic categories for equipment, consumables, professions, materials, miscellaneous items, and junk.
+- Added item-level labels, unusable-item overlays, and scrap/non-upgrade coin markers.
+- Moved ambiguous Parts items into Other Materials instead of assuming Engineering.
+- Collapsed the large empty-slot grid into a compact empty-slot count.
+- Added a darker bag background and a layout that sizes around occupied categories.
+
+Maintenance
+- Consolidated all historical release notes into one descending changelog.
+- Added a project to-do list for known visual cleanup work.
+
+Known Issues / To Do
+- Automatic true line-of-sight detection remains limited by the reliable information exposed by WoW; forced LoS remains the dependable diagnostic path.
+- GoblinResearcher's settings title needs a wider custom header plate.
+- GoblinBags remains a preview and needs broader live testing across classes, professions, combat, banks, and reagent containers.
+
+
+GoblinPlates v0.1.96 Stable
+Release Date: July 12, 2026
+
+GoblinFrames
+- Redesigned player and target frames around compact portraits, two-line names, health and power bars, level displays, and outlined text.
+- Added saved positions for player and target frames.
+- Added custom Alliance and Horde PvP crests positioned flush with portraits and frames.
+- Added unfiltered frame auras with separate buff and debuff rows, readable tooltips, and spacing between group members.
+- Added party and raid frames based on the player/target frame design.
+- Added party/raid role icons for tank, healer, and damage roles.
+- Suppressed the corresponding Blizzard party display while GoblinFrames is active.
+- Added block and individual movement modes for group frames.
+- Added the default four-member layout with P2/P4 on the top row and P1/P3 on the bottom row to avoid odd gaps.
+- Standardized health formatting: comma-separated values below 100,000, K notation at 100,000+, and M notation at 1,000,000+.
+
+Nameplates
+- Added custom Alliance and Horde PvP crests and positioned them clear of the health bar.
+- Updated health-number formatting to match GoblinFrames.
+- Improved vertical stacking and screen-edge behavior to reduce runaway piles at the top of the screen.
+- Added quest-objective indicators above relevant units.
+- Preserved filtered, combat-focused nameplate auras while unit frames display the full aura set.
+
+GoblinResearcher
+- Embedded the MobInfo2-derived research system directly inside GoblinPlates as GoblinResearcher.
+- Added creature health, type, class, aggression, XP, kills-to-level, kill count, quest progress, threat, location, loot, and item-value research.
+- Added the GoblinResearcher database, search interface, tooltips, and minimap access.
+
+
+GoblinPlates v0.1.95
+Release Date: July 11, 2026
+
+- Added target nameplate scaling and external target markers.
+- Made target markers reposition around PvP, honor, and class icons.
+- Added delayed marker repair for icons loaded after initial layout.
+- Added threat-state coloring and scaled threat-glow handling.
+- Expanded class-specific range handling and live threshold transitions.
+- Embedded GoblinQuartz with player casting, spell icons, spell names, timing, and latency display.
+- Integrated the MobInfo2-derived system as GoblinResearcher with tooltips, health, classification, aggression, XP, kills, quests, threat, location, loot, item values, database search, and minimap access.
+- Expanded CPU, memory, FPS, latency, per-module work, and nameplate lifecycle diagnostics.
+- Completed extended open-world performance and memory testing.
+
+
+GoblinPlates v0.1.9 Stable
+Release Date: July 9, 2026
+
+Core and Scheduling
+- Reworked updates into independent Static, Health, Threat, and Range/LoS groups.
+- Added separate combat and out-of-combat update frequencies.
+- Reduced redundant redraws, duplicate updates, and repeated layout calculations.
+- Added a centralized visual-priority system: LoS, range, target, threat, then base visuals.
+- Fixed normal visual restoration after priority states clear.
+
+Range and LoS
+- Added smoother range bands: 0-8, 8-20, 20-30, 30-35, 35-38, 38-40, 40-45, and 45-50 yards.
+- Added extra refresh windows to improve recovery after returning to range.
+- Created a dedicated LoS module and state framework for blocked, out-of-LoS, and behind-player states.
+- True automatic LoS detection remained pending a reliable probe.
+
+Nameplates and Targeting
+- Centralized reusable nameplate layout.
+- Added dynamic scaling for bars, borders, text, levels, and range displays.
+- Added 150% elite and 200% boss/world-boss scaling.
+- Integrated target scaling without shrinking elite or boss plates.
+
+Diagnostics and Cleanup
+- Expanded range, scheduler, and visual-priority diagnostics.
+- Removed duplicate update paths and standardized module refresh ownership.
+- Improved compatibility among nameplate modules.
+
+
+GoblinPlates v0.1.08
+Release Date: July 7, 2026
+
+Nameplates
+- Reworked the nameplate framework for improved stability.
+- Hid Blizzard nameplate elements without triggering taint.
+- Fixed friendly and enemy display behavior.
+- Made health values independent of Blizzard's nameplate-text settings.
+- Redesigned name/range layout and moved range to the right of the unit name.
+- Reduced stacked-nameplate spacing while preventing name collisions.
+
+Range
+- Increased displayed range from 45 to 50 yards.
+- Added colored thresholds: red at 0-15, orange at 15-20, yellow at 20-25, green at 25-40, and gray at 40-50 yards.
+
+GoblinQuartz
+- Added embedded player and target cast bars.
+- Hid Blizzard player, target, focus, and pet cast bars.
+- Added spell icons, names, latency safe zones, latency text, and secret-value-safe interrupt overlays.
+- Added draggable edit mode, saved positions, and /gq unlock, lock, and reset commands.
+
+General
+- Reduced multiple secret-value and taint issues.
+- Improved module separation and edit-mode infrastructure.
+
+
+GoblinPlates v0.1.7
+Release Date: July 6, 2026
+
+Auras
+- Reworked aura filtering.
+- Hostile and neutral units show debuffs and HoTs.
+- Friendly units show dispellable debuffs, crowd control, and HoTs.
+- Added Blizzard radial cooldown swipes and automatic multi-row layouts.
+- Removed numeric aura durations, increased debuff size, and improved spacing and centering.
+- Fixed cooldown swipes and multiple aura-timing issues.
+
+Performance and Diagnostics
+- Added combat FPS, memory, CPU, and latency diagnostics.
+- Reduced aura clutter, optimized aura updates, and continued memory tuning.
+- Recorded approximately 300 ms addon CPU after extended combat, roughly 1.4 MB average memory with a 5.5 MB peak, and stable 57-60 FPS in the original test environment.
+
+Compatibility
+- Investigated the MobInfo2 taint conflict and identified the original external-addon interaction.
