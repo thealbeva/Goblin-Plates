@@ -1,6 +1,29 @@
 GoblinPlates Changelog
 ======================
 
+GoblinPlates v0.1.98 (In Development)
+Update Date: July 18, 2026
+
+GoblinFrames
+- Fixed the target frame failing to grey out when its unit is 40 or more yards away.
+- Applied the out-of-range treatment consistently to the target's health, power, name, level, portrait, PvP/role icons, and absorb overlay.
+- Reused GoblinPlates' existing dynamic range refresh instead of creating another repeating performance ticker.
+
+GoblinBags
+- Replaced the bulky full item-quality outlines with compact, quality-colored corner accents.
+- Increased the visibility of item-quality coloring without overwhelming the item artwork.
+- Removed the unreliable IsUsableItem equipment check that incorrectly marked equippable items such as cloaks red.
+- Applied red equipment shading to reliably detected incompatibilities, items above the character's level, and active-spec downgrades.
+- Added centered required-level labels over the red shading for compatible equipment the character is not yet high enough to equip.
+- Preserved item-level labels in the upper-left and kept disposition markers above other item overlays.
+- Added optional active-spec scoring through Pawn's visible specialization scale, with item-level comparison retained when Pawn is unavailable or still loading.
+- Added a Disenchant marker beneath the sell or trash marker for eligible equipment.
+- Improved Disenchant detection by honoring Blizzard's explicit Disenchantable, Cannot Be Disenchanted, and Enchanting-requirement tooltip data before using the legacy quality/class fallback.
+- Hid Disenchant markers on soulbound items when the current character is not an Enchanter.
+- Displayed gold coins on sellable junk and downgrade candidates.
+- Replaced the gold coin with a trash-can marker when an item has no vendor value.
+
+
 GoblinPlates v0.1.97 Stable
 Release Date: July 16, 2026
 
@@ -11,6 +34,7 @@ Absorb Shields and Combat State
 - Added centered remaining-absorb values while keeping health values readable.
 - Corrected shield scaling differences among players of different levels.
 - Ensured combat indicators render above shield overlays.
+- Fixed UNIT_AURA shield updates attempting Blizzard nameplate lookups with forbidden target-of-target unit tokens.
 
 Performance
 - Set health refresh to 0.15 seconds in combat and 3.5 seconds out of combat.
@@ -37,6 +61,8 @@ GoblinBags (Preview)
 Maintenance
 - Consolidated all historical release notes into one descending changelog.
 - Added a project to-do list for known visual cleanup work.
+- Promoted the reference player's current unit-frame, cast-bar, and Researcher minimap-button positions to the factory defaults for new users.
+- Lowered the default party-frame block to sit approximately 12 pixels above the reference action-bar layout.
 
 Known Issues / To Do
 - Automatic true line-of-sight detection remains limited by the reliable information exposed by WoW; forced LoS remains the dependable diagnostic path.
