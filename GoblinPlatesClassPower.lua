@@ -1,0 +1,3 @@
+local addonName, GP = ...
+GP = GP or {}
+_G.GoblinPlates = GP
