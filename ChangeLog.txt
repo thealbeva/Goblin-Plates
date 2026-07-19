@@ -8,6 +8,12 @@ GoblinFrames
 - Fixed the target frame failing to grey out when its unit is 40 or more yards away.
 - Applied the out-of-range treatment consistently to the target's health, power, name, level, portrait, PvP/role icons, and absorb overlay.
 - Reused GoblinPlates' existing dynamic range refresh instead of creating another repeating performance ticker.
+- Added compact unit classifications to frame level markers: + for Elite/Rare-Elite, R for Rare, and ?? for World Boss.
+- Added custom square portrait ornaments: a winged gold dragon for bosses, a serpentine gold dragon for elites, and a silver mechanical dragon for rares.
+- Treated Rare-Elites as Elites so the classification system remains limited to three clear visual tiers.
+- Moved player and target levels into the mirrored name strips so classification artwork cannot cover them.
+- Mirrored the combat-icon position across player and target headers, preserving a clean name area between combat state and level.
+- Tuned classification ornaments to 76 pixels and centered them tightly around the 56-pixel portrait for a readable fit without overwhelming the unit frame.
 
 GoblinBags
 - Replaced the bulky full item-quality outlines with compact, quality-colored corner accents.
